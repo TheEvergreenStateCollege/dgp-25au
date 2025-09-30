@@ -61,12 +61,15 @@ In this undergrad research, students will work in teams of one to three, dividin
 
 
 # How Will Students Be Evaluated for Credit
-This undergrad research is worth a maximum of 4 credits titled "Distributed Gameplaying and Java Programming". These credits will be classified as upper division if a student completes 
+This undergrad research is worth a maximum of 4 credits titled "Distributed Gameplaying and Java Programming". These credits will be classified as upper division if a student has at least 80% attendance at all class sessions, submits 80% of homeworks, and participates in classroom discussion.
 
-Students in the class will evaluate each other at mid-term (Week 5) and at the end of the quarter (Week 10) on the basis of communication amount, communication style, 
+Students in the class will evaluate each other at mid-term (Week 5) and at the end of the quarter (Week 10) on the basis of communication amount and style to each other and effort in designing and implementing code features. Students will be awarded credit individually, but will work on
+the same player source code as a team.
 
 # Timeliness
+
 Students will receive their evaluations by the end of Week 10 to review before a Week 11 evaluation meeting.
+All work will be evaluated (homeworks in Canvas, commits to git) by Friday, 5pm, 
 
 # Artificial Intelligence and Collaboration Policy
 In this class, we emphasize the importance of following a collaboration policy to maximize learning and to develop good ethical habits for your future career. We based our collaboration policy on Evergreen's published standards on academic honesty.
