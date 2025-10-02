@@ -4,6 +4,8 @@
 
 ### Review of Syllabus
 
+[Syllabus](Syllabus.md)
+
 ### Questions
 
 Review any questions from last time and from HW 1.
