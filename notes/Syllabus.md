@@ -25,7 +25,7 @@ Head First Java, 3rd Edition by Kathy Sierra, Bert Bates, & Trisha Gee
 
 Optional, if you have already learned Java before:
 
-[MIT's Battlecode 2025 Youtube Playlist]()
+[MIT's Battlecode 2025 Youtube Playlist](https://www.youtube.com/playlist?list=PLzybaECz2FwQEhXKmVzqNSulM2Qn4kFaq)
 
 # Activities and Schedule
 This class will meet in two 2-hour sessions per week, on Monday and Wednesday evenings, 6pm to 8pm Pacific Time. We will meet entirely online via Zoom, with links published to the Canvas. However, If you are on-campus and wish to meet 
