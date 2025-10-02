@@ -70,7 +70,7 @@ the same player source code as a team.
 # Timeliness
 
 Students will receive their evaluations by the end of Week 10 to review before a Week 11 evaluation meeting.
-All work will be evaluated (homeworks in Canvas, commits to git) by Friday, 5pm, 
+All work will be evaluated (homeworks in Canvas, commits to git) by Friday, 5pm, Week 10.
 
 # Artificial Intelligence and Collaboration Policy
 In this class, we emphasize the importance of following a collaboration policy to maximize learning and to develop good ethical habits for your future career. We based our collaboration policy on Evergreen's published standards on academic honesty.
