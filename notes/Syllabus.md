@@ -16,8 +16,8 @@ Phone Number: 253-235-9025
 Office hours by Zoom to be set in the first week of class and by appointment.
 
 # Online Resources
-Canvas Site - where to check for assignments, due dates, feedback
-GitHub Monorepo - where to pull code for in-class practice 
+[Canvas Site](https://canvas.evergreen.edu/courses/7771) - where to check for assignments, due dates, feedback
+[GitHub Monorepo](https://github.com/TheEvergreenStateCollege/dgp-25au/tree/main) - where to pull code for in-class practice 
 
 # Textbooks
 
