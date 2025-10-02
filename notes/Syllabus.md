@@ -61,7 +61,8 @@ In this undergrad research, students will work in teams of one to three, dividin
 
 
 # How Will Students Be Evaluated for Credit
-This undergrad research is worth a maximum of 4 credits titled "Distributed Gameplaying and Java Programming". These credits will be classified as upper division if a student has at least 80% attendance at all class sessions, submits 80% of homeworks, and participates in classroom discussion.
+This undergrad research is worth a maximum of 6 credits titled "Distributed Gameplaying and Java Programming". Four credits will be awarded as upper division if a student has at least 80% attendance at all class sessions, submits 80% of homeworks, and participates in classroom discussion.
+6 credits (all upper division) will be awarded if the team's player code beats the reference player (on a map to be determined).
 
 Students in the class will evaluate each other at mid-term (Week 5) and at the end of the quarter (Week 10) on the basis of communication amount and style to each other and effort in designing and implementing code features. Students will be awarded credit individually, but will work on
 the same player source code as a team.
