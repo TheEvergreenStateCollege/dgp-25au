@@ -16,8 +16,8 @@ Phone Number: 253-235-9025
 Office hours by Zoom to be set in the first week of class and by appointment.
 
 # Online Resources
-Canvas Site - where to check for assignments, due dates, feedback
-GitHub Monorepo - where to pull code for in-class practice 
+[Canvas Site](https://canvas.evergreen.edu/courses/7771) - where to check for assignments, due dates, feedback
+[GitHub Monorepo](https://github.com/TheEvergreenStateCollege/dgp-25au/tree/main) - where to pull code for in-class practice 
 
 # Textbooks
 
@@ -25,7 +25,7 @@ Head First Java, 3rd Edition by Kathy Sierra, Bert Bates, & Trisha Gee
 
 Optional, if you have already learned Java before:
 
-[MIT's Battlecode 2025 Youtube Playlist]()
+[MIT's Battlecode 2025 Youtube Playlist](https://www.youtube.com/playlist?list=PLzybaECz2FwQEhXKmVzqNSulM2Qn4kFaq)
 
 # Activities and Schedule
 This class will meet in two 2-hour sessions per week, on Monday and Wednesday evenings, 6pm to 8pm Pacific Time. We will meet entirely online via Zoom, with links published to the Canvas. However, If you are on-campus and wish to meet 
@@ -61,7 +61,8 @@ In this undergrad research, students will work in teams of one to three, dividin
 
 
 # How Will Students Be Evaluated for Credit
-This undergrad research is worth a maximum of 4 credits titled "Distributed Gameplaying and Java Programming". These credits will be classified as upper division if a student has at least 80% attendance at all class sessions, submits 80% of homeworks, and participates in classroom discussion.
+This undergrad research is worth a maximum of 6 credits titled "Distributed Gameplaying and Java Programming". Four credits will be awarded as upper division if a student has at least 80% attendance at all class sessions, submits 80% of homeworks, and participates in classroom discussion.
+6 credits (all upper division) will be awarded if the team's player code beats the reference player (on a map to be determined).
 
 Students in the class will evaluate each other at mid-term (Week 5) and at the end of the quarter (Week 10) on the basis of communication amount and style to each other and effort in designing and implementing code features. Students will be awarded credit individually, but will work on
 the same player source code as a team.
@@ -69,7 +70,7 @@ the same player source code as a team.
 # Timeliness
 
 Students will receive their evaluations by the end of Week 10 to review before a Week 11 evaluation meeting.
-All work will be evaluated (homeworks in Canvas, commits to git) by Friday, 5pm, 
+All work will be evaluated (homeworks in Canvas, commits to git) by Friday, 5pm, Week 10.
 
 # Artificial Intelligence and Collaboration Policy
 In this class, we emphasize the importance of following a collaboration policy to maximize learning and to develop good ethical habits for your future career. We based our collaboration policy on Evergreen's published standards on academic honesty.
