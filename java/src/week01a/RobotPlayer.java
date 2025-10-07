@@ -122,47 +122,13 @@ public class RobotPlayer {
      * This code is wrapped inside the infinite loop in run(), so it is called once per turn.
      */
     public static void moveAndExplore(RobotController rc) throws GameActionException{
-     
-      // Cycle through directions until we find one where we are not blocked
-      while (!rc.canMove(directions[currentDirection])) {
-        currentDirection = (currentDirection + 1) % directions.length;
-      }
-      // move in that direction
-      rc.move(directions[currentDirection]);
 
-      // TODO 1: Keep track of the furthest bounds of the  map we've seen so far 
-      //
-      // TODO 2: This currently moves in a spiral. Is there another way to explore map tiles, like a maze algorithm?
-      //
-      // TODO 3: Every robot does the same exploration. Can we divide up the map to speed up exploration?
-    }
+      // TODO 0: currentDirection is an int, and directions in an array of Direction (Direction[])
+      //         come up with an expression that evaluates to a Direction 
+      // TODO 1: We're going to use the rc.canMove() method to see if we can move this robot in the current direction.
+      // TODO 2: If we can move in a given direction, go ahead and move in that direction with rc.move()
 
-    static UnitType[] PAINT_TOWER_TYPES = new UnitType[] {
-      UnitType.LEVEL_ONE_PAINT_TOWER,
-      UnitType.LEVEL_TWO_PAINT_TOWER,
-      UnitType.LEVEL_THREE_PAINT_TOWER
-    };
-    static List<UnitType> PAINT_TOWER_TYPES_LIST = Arrays.asList(PAINT_TOWER_TYPES);
-    static RobotInfo originalPaintTower = null;
-
-    // Only call once when robot is first born 
-    public static boolean senseTower(RobotController rc) throws GameActionException {
       
-      // Sense nearby ally robots and print if any of them are towers
-      RobotInfo[] allyRobots = rc.senseNearbyRobots(-1, rc.getTeam());
-      for (RobotInfo ally : allyRobots) {
-        if (PAINT_TOWER_TYPES_LIST.indexOf(ally.type) != -1) {
-          // this ally is a paint tower
-          originalPaintTower = ally;
-          rc.setIndicatorString(
-              String.format("Paint tower found at %d,%d", ally.location.x, ally.location.y)
-          );
-          return true;
-        }
-      }
-
-      assert(originalPaintTower == null);
-      rc.setIndicatorString("No paint tower found.");
-      return false;
     }
+
 }
