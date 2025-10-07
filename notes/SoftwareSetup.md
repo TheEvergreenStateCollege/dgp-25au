@@ -7,7 +7,9 @@ You can follow [this video](https://www.youtube.com/watch?v=tcDLevC7wmU) to see 
 
 0. Go to Battlecode 2025's quickstart page. This is where you should return if in doubt.
    - https://play.battlecode.org/bc25java/home
-   
+
+## Install Java and Git Bash
+
 1. Install Oracle's Java Development Kit 21.
    - https://www.oracle.com/java/technologies/downloads/#jdk21-windows 
    
@@ -23,27 +25,50 @@ You can follow [this video](https://www.youtube.com/watch?v=tcDLevC7wmU) to see 
 	java -version
 ```
 
-5. Clone the class repo (you'll need to create a github account first and submit your username as part of HW1 on Canvas)
+## Configure Git SSH Key Access
+
+5. Create your SSH keypair 
+And then press enter 3 times, to accept default key location
+
+6. Dump the public key to standard output on the command line
+```
+cat ~/.ssh/id_ecdsa.pub
+```
+Select and copy the whole line.
+
+7. Go to https://github.com/settings/profile
+
+8. Click on “SSH and GPG Keys” on left sidebar
+
+9. Click the blue “New SSH Key” button
+
+10. Paste into the big text input
+11. Give the key a title like “Git Bash”
+12. And click “Add SSH Key”
+
+## Clone Class Repo and Build
+
+13. Clone the class repo (you'll need to create a github account first and submit your username as part of HW1 on Canvas)
 ```
 git clone git@github.com:TheEvergreenStateCollege/dgp-25au.git
 ```
 
-6. Change into your cloned directory and build the Battlecode client
+14. Change into your cloned directory and build the Battlecode client
 ```
 cd dgp-25au/java
 ```
 
-7. Update the game engine version and build it
+15. Update the game engine version and build it
 ```
 ./gradlew update
 ./gradlew build
 ```
 
-8. Run the Battlecode client, by tab-completing to see what executable file was compiled, then press Enter
+16. Run the Battlecode client, by tab-completing to see what executable file was compiled, then press Enter
 ```
 ./client/<tab tab>
 ```
 
-9. Try and run the `week01a` player against itself as shown at the end of our first class.
+17. Try and run the `week01a` player against itself as shown at the end of our first class.
 
 Bring any questions and problems you encounter to class next time.
