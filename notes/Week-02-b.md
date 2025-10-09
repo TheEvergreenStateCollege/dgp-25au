@@ -7,7 +7,7 @@
 ### Review
 
 Office Hours
-* Thursday 6pm, at https://evergreen.zoom.us/j/6963805953
+* Thursday 6pm PT, at https://evergreen.zoom.us/j/6963805953
 
 Discord Server to coordinate
 
