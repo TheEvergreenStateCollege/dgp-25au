@@ -1,6 +1,6 @@
 # Homework 1
 
-Continue [setting up your development environment][https://github.com/TheEvergreenStateCollege/dgp-25au/blob/main/notes/SoftwareSetup.md].
+Continue [setting up your development environment](https://github.com/TheEvergreenStateCollege/dgp-25au/blob/main/notes/SoftwareSetup.md).
 
 Read Head First Java, Chapter 1.
 
