@@ -1,4 +1,4 @@
-package week01a;
+package week02b;
 
 import battlecode.common.*;
 
@@ -125,9 +125,13 @@ public class RobotPlayer {
 
       // TODO 0: currentDirection is an int, and directions in an array of Direction (Direction[])
       //         come up with an expression that evaluates to a Direction 
+      Direction enumCurrentDirection = directions[currentDirection];
       // TODO 1: We're going to use the rc.canMove() method to see if we can move this robot in the current direction.
+      if (rc.canMove(enumCurrentDirection) == false) {
+        return;
+      }
       // TODO 2: If we can move in a given direction, go ahead and move in that direction with rc.move()
-
+      rc.move(enumCurrentDirection);
       
     }
 
