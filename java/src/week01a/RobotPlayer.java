@@ -74,12 +74,7 @@ public class RobotPlayer {
           Clock.yield();
         }
 
-        try {
-          senseTower(rc);
-          System.out.println("Called senseTower"); 
-        } catch (GameActionException e) {
-          Clock.yield();
-        }
+       
 
         while (true) {
             // This code runs during the entire lifespan of the robot, which is why it is in an infinite
