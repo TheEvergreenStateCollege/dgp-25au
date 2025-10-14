@@ -128,16 +128,22 @@ public class RobotPlayer {
       Direction enumCurrentDirection = directions[currentDirection];
       // TODO 1: We're going to use the rc.canMove() method to see if we can move this robot in the current direction.
       if (rc.canMove(enumCurrentDirection) == false) {
-        /*for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 8; i++) {
           enumCurrentDirection = directions[(currentDirection + i + 1)%8];
           if (rc.canMove(enumCurrentDirection) == true) {
             break;
           }
+          System.out.println(rc.canMove(directions[0]));
+          System.out.println(rc.canMove(directions[1]));
+          System.out.println(rc.canMove(directions[2]));
+          System.out.println(rc.canMove(directions[3]));
+          System.out.println(rc.canMove(directions[4]));
+          System.out.println(rc.canMove(directions[5]));
+          System.out.println(rc.canMove(directions[6]));
+          System.out.println(rc.canMove(directions[7]));
         }
         
-        return;*/
-        enumCurrentDirection = directions[2];
-        System.out.println(rc.canMove(enumCurrentDirection));
+        return;
       }
       // TODO 2: If we can move in a given direction, go ahead and move in that direction with rc.move()
       rc.move(enumCurrentDirection);
