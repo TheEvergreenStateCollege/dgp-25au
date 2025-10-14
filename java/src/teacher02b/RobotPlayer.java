@@ -1,14 +1,10 @@
-package week01a;
+package teacher02b;
 
 import battlecode.common.*;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
-import java.util.Set;
 
 /**
  * RobotPlayer is the class that describes your main robot strategy.
@@ -46,6 +42,34 @@ public class RobotPlayer {
         Direction.NORTHWEST,
     };
 
+    static UnitType[] PAINT_TOWER_TYPES = new UnitType[] {
+      UnitType.LEVEL_ONE_PAINT_TOWER,
+      UnitType.LEVEL_TWO_PAINT_TOWER,
+      UnitType.LEVEL_THREE_PAINT_TOWER
+    };
+    static List<UnitType> PAINT_TOWER_TYPES_LIST = Arrays.asList(PAINT_TOWER_TYPES);
+    static RobotInfo originalPaintTower = null;
+
+    // Only call once when robot is first born 
+    public static boolean senseTower(RobotController rc) throws GameActionException {
+      
+      // Sense nearby ally robots and print if any of them are towers
+      RobotInfo[] allyRobots = rc.senseNearbyRobots(-1, rc.getTeam());
+      for (RobotInfo ally : allyRobots) {
+        if (PAINT_TOWER_TYPES_LIST.indexOf(ally.type) != -1) {
+          // this ally is a paint tower
+          originalPaintTower = ally;
+          String message = String.format("Paint tower found at %d,%d", ally.location.x, ally.location.y);
+          rc.setIndicatorString(message);
+          return true;
+        }
+      }
+
+      assert(originalPaintTower == null);
+      rc.setIndicatorString("No paint tower found.");
+      return false;
+    }
+
     /**
      * run() is the method that is called when a robot is instantiated in the Battlecode world.
      * It is like the main function for your robot. If this method returns, the robot dies!
@@ -57,23 +81,26 @@ public class RobotPlayer {
     public static void run(RobotController rc) throws GameActionException {
         // Hello world! Standard output is very useful for debugging.
         // Everything you say here will be directly viewable in your terminal when you run a match!
-        System.out.println("Lesson Week 01a");
+        System.out.println("Teacher 02b");
 
         // You can also use indicators to save debug notes in replays.
-
-        rc.setIndicatorString("Hello from Week 01a");
+        rc.setIndicatorString("Hello from Teacher 02b");
 
         // Create exactly one robot on startup, at robot controller's location 
         // in a random direction
         Direction dir = directions[rng.nextInt(directions.length)];
         MapLocation nextLoc = rc.getLocation().add(dir);
 
-        if (rc.canBuildRobot(UnitType.MOPPER, nextLoc)) {
-          rc.buildRobot(UnitType.MOPPER, nextLoc);
-        } else {
-          // if we can't build a robot, end this robot
-          Clock.yield();
+        // Only a tower, and with enough resources, will be able to run this
+        if (rc.canBuildRobot(UnitType.SPLASHER, nextLoc)) {
+          rc.buildRobot(UnitType.SPLASHER, nextLoc);
         }
+
+        if (rc.getType() == UnitType.SPLASHER) {
+          RobotPlayer.senseTower(rc);
+          System.out.println("Called senseTower"); 
+        }
+
 
         while (true) {
             // This code runs during the entire lifespan of the robot, which is why it is in an infinite
@@ -116,13 +143,26 @@ public class RobotPlayer {
      * This code is wrapped inside the infinite loop in run(), so it is called once per turn.
      */
     public static void moveAndExplore(RobotController rc) throws GameActionException{
+     
+      // Cycle through directions until we find one where we are not blocked
+      while (!rc.canMove(directions[currentDirection])) {
+        currentDirection = (currentDirection + 1) % directions.length;
+      }
 
-      // TODO 0: currentDirection is an int, and directions in an array of Direction (Direction[])
-      //         come up with an expression that evaluates to a Direction 
-      // TODO 1: We're going to use the rc.canMove() method to see if we can move this robot in the current direction.
-      // TODO 2: If we can move in a given direction, go ahead and move in that direction with rc.move()
+      // Get our current location
+      MapLocation here = rc.getLocation();
 
-      
+      // Before we move, attack/paint the current location if we can (it's not already painted)
+      if (rc.canPaint(here)) {
+        // Does this paint the primary color? How do we paint it our secondary color?
+        rc.attack(here);
+      } else {
+        System.out.println("Cannot paint at " + here.toString());
+      }
+
+      // move in that direction
+      rc.move(directions[currentDirection]);
+
     }
 
 }
