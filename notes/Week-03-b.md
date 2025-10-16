@@ -22,7 +22,7 @@ ls -lh
 * Question:
 
   * what are some problems or shortcomings you notice with this approach of sharing code?
-  * Come up with at least three, and [submit them in Canvas]().
+  * Come up with at least three, and [submit them in Canvas](https://canvas.evergreen.edu/courses/7771/assignments/143474).
   * Use the actual code you sent and received in ZIP files as examples.
 
 ### Discuss Battlecode
