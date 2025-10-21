@@ -8,8 +8,10 @@ In Chants of Sennaar, you play as a humanoid translator. It's the Tower of Babel
 
    <img width="1374" height="768" alt="image" src="https://github.com/user-attachments/assets/af77a946-456e-4918-997c-9984e5c93f3e" />
 
-As I alluded to above, patience and a willingness to *really* think outside the box with regards to what's going on. Things are not always as they seem. 
+As I alluded to above, patience and a willingness to *really* think outside the box with regards to what's going on. Things are not always as they seem.
 
-For this undergraduate research opportunity, I really want to dial in on the skills that will benefit me doing research work in graduate school and future employment.
+A very human value introduced in this game is alterations to knowing/not-knowing. As humans, we are not inclined to confusion and/or not-knowing as a preferred state of mind, and very frequently the game can alter these two values seemingly at will. There are also other ones, but they are story related and I absolutely do not want to spoil.
+
+For this undergraduate research opportunity, I really want to dial in on the skills that will benefit me doing research work in graduate school and future employment. I don't mean this in exclusively technical terms, although proficiency in UNIX systems and Git are always useful as well as expanding my limited capabilities in Java, but also in collaborative group work and independent thinking.
 
 <hr/>
