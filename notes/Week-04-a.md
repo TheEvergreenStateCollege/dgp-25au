@@ -21,6 +21,10 @@ If this is your first time, introducing yourself, do the [Intro Activity](https:
 
 If this is your second time, do [Step 6](https://github.com/TheEvergreenStateCollege/dgp-25au/blob/main/activities/Introductions.md#step-6) to update your first introduction Markdown file.
 
+## Break
+
+## Second Half (TBD)
+
 ### AWS Outage and Ref Player
 
 A DNS failure that led to downstream failures that depend on it.
@@ -41,11 +45,8 @@ Breakout Room Activity:
   * the driver will run `git pull`, create a new player directory `week04a`, copy over `RobotPlayer.java` from `week03b`
   * the navigator will read from [`teacher03b` source code](https://github.com/TheEvergreenStateCollege/dgp-25au/tree/main/java/src/teacher03b)
   * every 3 lines or so, the driver and navigator should `git add`, `git commit` and `git push` and switch.
-* New students will stay in the main meeting and go over the [Software Setup]()
+* New students will stay in the main meeting and go over the [Software Setup](https://github.com/TheEvergreenStateCollege/dgp-25au/blob/main/notes/SoftwareSetup.md)
 
-## Break
+### Quiz-04
 
-## Second Half (TBD)
-
-### Questions from HW-01 and HW-02
-
+https://canvas.evergreen.edu/courses/7771/assignments/143608
