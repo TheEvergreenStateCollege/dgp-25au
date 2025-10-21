@@ -49,6 +49,17 @@ When you're finished, you can click "Commit changes" and accept the default mess
 
 <img width="374" height="59" alt="image" src="https://github.com/user-attachments/assets/27f050a6-14e2-4f72-8f67-3a6a8fc21f4c" />
 
+## Step 6.
+
+Update your markdown file with an additional item, using your chosen game.
+
+Try to describe an *event*, its change in *human values*, and what *emotion* it brings up in you
+as you play your chosen game.
+
+You may be inspired by this excerpt from the reading
+
+<img width="1002" height="536" alt="image" src="https://github.com/user-attachments/assets/f0f7454e-a683-45ea-bb05-c286da2dcd14" />
+
 ## Other comments
 Don't worry, you can go back and make more changes or fix mistakes in the future, and these will be recorded as
 new line changes, in a new "commit".
