@@ -17,5 +17,5 @@
    - I'd like to learn good ways to code intelligent enemy AI. I'm working on a game project and I think this will be good practice for designing enemy intelligence in that game.
 5. Human values Example:
    - In Silksong, giving a certain NPC an item will result in you becoming infected with a parasite. Said parasite will restrict your abilities and visibly afflict your character. In order to get rid of the parasite, you have to go on a lengthy quest to find someone capable of removing it, and convince them to do so.
-   - When you initilly get the parasite, you may feel frustration that you are now significantly weaker than you were before, and must go out of your way to fix this.
+   - When you initially get the parasite, you may feel frustration that you are now significantly weaker than you were before, and must go out of your way to fix this.
    - When you finally get the parasite removed, you feel relieved that you are finally back to full power.
