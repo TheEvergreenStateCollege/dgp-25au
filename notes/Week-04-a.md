@@ -21,6 +21,14 @@ If this is your first time, introducing yourself, do the [Intro Activity](https:
 
 If this is your second time, do [Step 6](https://github.com/TheEvergreenStateCollege/dgp-25au/blob/main/activities/Introductions.md#step-6) to update your first introduction Markdown file.
 
+### AWS Outage and Ref Player
+
+A DNS failure that led to downstream failures that depend on it.
+
+In distributed gameplaying, our `refplayer` has a lot of code.
+
+Let's read through it and determine what one line we could change so that it does not beat our own player.
+
 ### Preview Battlecode Pair Programming
 
 We'll go over the painting behavior in `teacher03b` and observe how the percentage
