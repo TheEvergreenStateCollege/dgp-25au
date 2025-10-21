@@ -11,9 +11,10 @@
    but that's the idea. You are absolutely not supposed to try and brute-force the solution. It requires patience, which is aided by it being
    very relaxing atmospherically.
    c. Paste this screenshot below this question, paste it like this
-   <img width="800" height="450" alt="image" src="[https://github.com/user-attachments/assets/fea40739-7c7d-4c4d-bf57-a77154fe8842](https://i0.wp.com/intoindiegames.com/wp-content/uploads/Chants_Of_Sennaar_2023-09-07_16-48-16.jpg?resize=800%2C450&ssl=1)" />
 
-4. As I alluded to above, patience and a willingness to *really* think outside the box with regards to what's going on. Things are not
+   <img width="1374" height="768" alt="image" src="https://github.com/user-attachments/assets/af77a946-456e-4918-997c-9984e5c93f3e" />
+
+5. As I alluded to above, patience and a willingness to *really* think outside the box with regards to what's going on. Things are not
    always as they seem.
    STOPPED HERE
 6. What would you like to do with the ideas, skills, and knowledge you'll learn this quarter?
