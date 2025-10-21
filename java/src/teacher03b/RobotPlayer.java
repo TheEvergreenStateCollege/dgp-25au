@@ -144,31 +144,4 @@ public class RobotPlayer {
         // Your code should never reach here (unless it's intentional)! Self-destruction imminent...
     }
 
-    /**
-     * Run a single turn for towers.
-     * This code is wrapped inside the infinite loop in run(), so it is called once per turn.
-     */
-    public static void moveAndExplore(RobotController rc) throws GameActionException{
-     
-      // Cycle through directions until we find one where we are not blocked
-      while (!rc.canMove(directions[currentDirection])) {
-        currentDirection = (currentDirection + 1) % directions.length;
-      }
-
-      // Get our current location
-      MapLocation here = rc.getLocation();
-
-      // Before we move, attack/paint the current location if we can (it's not already painted)
-      if (rc.canPaint(here)) {
-        // Does this paint the primary color? How do we paint it our secondary color?
-        rc.attack(here);
-      } else {
-        System.out.println("Cannot paint at " + here.toString());
-      }
-
-      // move in that direction
-      rc.move(directions[currentDirection]);
-
-    }
-
 }
