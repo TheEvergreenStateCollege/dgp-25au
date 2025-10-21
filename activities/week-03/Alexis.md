@@ -10,7 +10,6 @@
    to interpret the glyphs that other people speak as words, and reconnect the different inhabitants. There's a ton of trial-and-error,
    but that's the idea. You are absolutely not supposed to try and brute-force the solution. It requires patience, which is aided by it being
    very relaxing atmospherically.
-   c. Paste this screenshot below this question, paste it like this
 
    <img width="1374" height="768" alt="image" src="https://github.com/user-attachments/assets/af77a946-456e-4918-997c-9984e5c93f3e" />
 
