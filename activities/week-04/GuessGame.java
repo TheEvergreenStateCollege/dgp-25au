@@ -1,11 +1,11 @@
 import java.util.Random;
 
 public class GuessGame {
-    Player p1;
-    Player p2;
-    Player p3;
+    static Player p1;
+    static Player p2;
+    static Player p3;
 
-    public void startGame() {
+    public static void main(String[] args) {
         p1 = new Player();
         p2 = new Player();
         p3 = new Player();
