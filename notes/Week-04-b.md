@@ -52,6 +52,9 @@ Don't write down anything, you'll get a chance to answer the quiz again after cl
 
 ### Spiral Movement and Using Classes and Objects
 
+<img width="687" height="616" alt="image" src="https://github.com/user-attachments/assets/48f01a2b-86d5-4faf-aab0-0607cb07ebc7" />
+
+
 So far, we've been putting everything in `RobotPlayer`, which makes it harder to
 understand, test, and divide up work.
 
