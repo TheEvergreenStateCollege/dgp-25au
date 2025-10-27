@@ -1,16 +1,20 @@
-# Battlecode 2025 Scaffold
+# Distributed Gameplaying in Java I
 
-This is the Battlecode 2025 scaffold, containing starter code and useful scripts for running and compiling your bot.
+Welcome to the class monorepo for the class DGP in Fall Quarter, 2025.
 
-**We are using a rewritten version of the client this year, so please let teh devs know 
-if you encounter any issues or have any feedback!**
+We are a fork of the Battlecode 2025 competition. We are learning game design
+how to formulate strategies, and how to find and repair bugs.
 
-### Project Structure
+We'll use this repo to participate in class activities and develop player
+code in Java to implement and demonstrate our strategies in an attempt to
+defeat the reference player.
 
-- `java/`
-   Scaffold for the Java engine. If Java is your preferred language, please use this 
-   subdirectory and follow the README file included there.
-- `python/`
-   Scaffold for the Python engine. If Python is your preferred language, please use this subdirectory and follow the README file included there.
+The players will be named after the class session where they are developed,
+and are located in the directories below matching their Java package names.
 
-Keep in mind, Python is **EXPERIMENTAL**, and not eligible to participate against other java bots. Please see the website for more details.
+The main class in each case is called `RobotPlayer.java`
+
+```
+src/
+ |-week04b/ // spiral movement, and different strategies for splashers
+```
