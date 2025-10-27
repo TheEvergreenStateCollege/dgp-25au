@@ -1,4 +1,4 @@
-package week03b;
+package week04b;
 
 import battlecode.common.*;
 
@@ -88,12 +88,15 @@ public class RobotPlayer {
 
             turnCount += 1;  // We have now been alive for one more turn!
 
+            System.out.println(rc.getType());
             // Try/catch blocks stop unhandled exceptions, which cause your robot to explode.
             try {
                 // The same run() function is called for every robot on your team, even if they are
                 // different types.
                 if (rc.getType() == UnitType.MOPPER || rc.getType() == UnitType.SPLASHER || rc.getType() == UnitType.SOLDIER) {
                   moveAndExplore(rc);
+                } else {
+                  buildAndDefend(rc);
                 }
             } catch (GameActionException e) {
                 // Oh no! It looks like we did something illegal in the Battlecode world. You should
@@ -143,6 +146,17 @@ public class RobotPlayer {
       rc.move(enumCurrentDirection);
       
       
+    }
+
+    public static void buildAndDefend(RobotController rc) throws GameActionException{
+      
+
+      Direction dir = directions[rng.nextInt(directions.length)];
+      MapLocation nextLoc = rc.getLocation().add(dir);
+
+      if (rc.canBuildRobot(UnitType.MOPPER, nextLoc)) {
+        rc.buildRobot(UnitType.MOPPER, nextLoc);
+      }
     }
 
 }

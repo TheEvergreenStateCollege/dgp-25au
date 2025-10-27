@@ -1,4 +1,4 @@
-package week03b;
+package week04b;
 
 import battlecode.common.*;
 
@@ -74,11 +74,10 @@ public class RobotPlayer {
           Clock.yield();
         }
 
-        /*try {
-          senseTower(rc);
+        /*if (rc.getType() == UnitType.SPLASHER) {
+          painter = new SplasherPainter(rc);
+          RobotPlayer.senseTower(rc);
           System.out.println("Called senseTower"); 
-        } catch (GameActionException e) {
-          Clock.yield();
         }*/
 
         while (true) {
@@ -144,5 +143,6 @@ public class RobotPlayer {
       
       
     }
+
 
 }
