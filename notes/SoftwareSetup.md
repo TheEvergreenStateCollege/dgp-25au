@@ -56,6 +56,7 @@ If you used a different cryptosystem, substitute that for the public key filesys
 ## Clone Class Repo and Build
 
 13. Clone the class repo (you'll need to create a github account first and submit your username as part of HW1 on Canvas)
+by pasting the following into the Git Bash command-line.
 ```
 git clone git@github.com:TheEvergreenStateCollege/dgp-25au.git
 ```
