@@ -27,7 +27,12 @@ You can follow [this video](https://www.youtube.com/watch?v=tcDLevC7wmU) to see 
 
 ## Configure Git SSH Key Access
 
-5. Create your SSH keypair 
+5. Create your SSH keypair (we've been using the ECDSA cryptosystem, but you can use any other supported cryptosystem)
+
+```
+ssh-keygen -t ecdsa
+```
+
 And then press enter 3 times, to accept default key location
 
 6. Dump the public key to standard output on the command line
@@ -35,6 +40,8 @@ And then press enter 3 times, to accept default key location
 cat ~/.ssh/id_ecdsa.pub
 ```
 Select and copy the whole line.
+
+If you used a different cryptosystem, substitute that for the public key filesystem.
 
 7. Go to https://github.com/settings/profile
 
