@@ -35,4 +35,8 @@ Pros
 
 What are some cons?
 
-Let's break down our strategy into parts
+* We may become stuck in "analysis paralysis" without being able to test our ideas
+* It may not be fun
+* We don't encounter surprises as we incrementally code and run our player
+
+Let's work on transferring some ideas from `teacher05b` player to `week05b`
