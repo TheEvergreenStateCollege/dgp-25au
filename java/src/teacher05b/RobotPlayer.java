@@ -60,13 +60,16 @@ public class RobotPlayer {
 
         AbstractMover mover = null;
 
-        // Only a tower, and with enough resources, will be able to run this
-        if (rc.canBuildRobot(UnitType.MOPPER, nextLoc)) {
-          rc.buildRobot(UnitType.MOPPER, nextLoc);
-        }
-
-        if (rc.canBuildRobot(UnitType.SPLASHER, nextLoc)) {
-          rc.buildRobot(UnitType.SPLASHER, nextLoc);
+        if (Tower.isPaintTower(rc.getType())) {
+          // Only a paint tower, and with enough resources, will be able to run this
+          if (rc.canBuildRobot(UnitType.MOPPER, nextLoc)) {
+            rc.buildRobot(UnitType.MOPPER, nextLoc);
+          }
+        } else {
+          // we are a money tower
+          if (rc.canBuildRobot(UnitType.SPLASHER, nextLoc)) {
+            rc.buildRobot(UnitType.SPLASHER, nextLoc);
+          }
         }
 
         if (rc.getType() == UnitType.SPLASHER) {

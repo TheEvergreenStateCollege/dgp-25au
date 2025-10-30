@@ -1,4 +1,4 @@
-package week04b;
+package week04a;
 
 import battlecode.common.*;
 

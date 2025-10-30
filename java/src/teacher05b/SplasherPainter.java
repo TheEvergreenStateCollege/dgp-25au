@@ -33,13 +33,6 @@ public abstract class SplasherPainter extends AbstractMover {
         this.homeTower = senseTower(rc);
     }
 
-    static UnitType[] PAINT_TOWER_TYPES = new UnitType[] {
-      UnitType.LEVEL_ONE_PAINT_TOWER,
-      UnitType.LEVEL_TWO_PAINT_TOWER,
-      UnitType.LEVEL_THREE_PAINT_TOWER
-    };
-    static List<UnitType> PAINT_TOWER_TYPES_LIST = Arrays.asList(PAINT_TOWER_TYPES);
-
     // Sense nearby robots and if any of them are a type of tower
     // return the MapLocation of the first one (which should be the tower that spawned us)
     public static MapLocation senseTower(RobotController rc) throws GameActionException {
@@ -51,7 +44,7 @@ public abstract class SplasherPainter extends AbstractMover {
       for (RobotInfo ally : allyRobots) {
         MapLocation allyLoc = ally.getLocation();
         try {
-            if ((PAINT_TOWER_TYPES_LIST.indexOf(ally.type) != -1)) {
+            if (Tower.isTower(ally.type)) {
                 String message = String.format("Paint tower found at %d,%d", ally.location.x, ally.location.y);
                 System.out.println(message);
                 // this ally is a paint tower
