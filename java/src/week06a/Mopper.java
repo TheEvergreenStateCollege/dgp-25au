@@ -43,7 +43,7 @@ public class Mopper extends AbstractMover {
                 this.moveCount += 1;
 
                 // If we're at the target, unpaint it and unset our target
-                if (here.equals(enemyPaintTarget)) {
+                if (here.isWithinDistanceSquared()) {
                     rc.attack(enemyPaintTarget);
                     enemyPaintTarget = null;
                 }
@@ -68,7 +68,7 @@ public class Mopper extends AbstractMover {
         // If it's time for us to refresh our view of the environment,
         // and we don't have a goal already
         if ((this.moveCount % this.senseInterval) == 0 && (enemyPaintTarget == null)) {
-            MapInfo[] tiles = rc.senseNearbyMapInfos();
+            MapInfo[] tiles = rc.senseNearbyMapInfos(4);
             for (MapInfo tile : tiles) {
                 if ((tile.getPaint() == PaintType.ENEMY_PRIMARY) ||
                     (tile.getPaint() == PaintType.ENEMY_SECONDARY)) {

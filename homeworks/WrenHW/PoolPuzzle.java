@@ -9,7 +9,7 @@ class PoolPuzzle {
        System.out.print(“n“);
        if ( x > 1 ) {
         System.out.print(“ oyster“);
-        X = x + 2
+        x = x + 2
        }
        if ( x == 1 ) {
         System.out.print(“noys“);
