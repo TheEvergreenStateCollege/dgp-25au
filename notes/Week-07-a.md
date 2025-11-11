@@ -6,6 +6,11 @@
 * Review, a winning strategy is in sight
   * `teacher05b` vs. `refplayer`
 
+* Questions
+  * Question 1. What kind of loop is try{} and catch{}?
+  * Question 2. Can the directional array be even more delineated (more directions added) without breaking the game?
+  * Question 3. How would you add more piece types?
+
 * Dividing up strategy
   * between multiple kinds of units
   * between "pilot" and "gunner" of the same kind of unit
