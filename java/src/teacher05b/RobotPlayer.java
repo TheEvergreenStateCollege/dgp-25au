@@ -60,30 +60,11 @@ public class RobotPlayer {
 
         AbstractMover mover = null;
 
-        if (Tower.isPaintTower(rc.getType())) {
-          // Only a paint tower, and with enough resources, will be able to run this
-          if (rc.canBuildRobot(UnitType.MOPPER, nextLoc)) {
-            rc.buildRobot(UnitType.MOPPER, nextLoc);
-          }
-        } else {
-          // we are a money tower
-          if (rc.canBuildRobot(UnitType.SPLASHER, nextLoc)) {
-            rc.buildRobot(UnitType.SPLASHER, nextLoc);
-          }
-        }
-
-        if (rc.getType() == UnitType.SPLASHER) {
-
-          if (rc.getID() % 2 == 0) {
-            // If splasher ID is even, do random movements
-            mover = new RandomPainter(rc);
-          } else {
-            // If splasher ID is off, do spiral movements
-            mover = new SpiralPainter(rc);
-          }
-
-        } else {
-          mover = new Mopper(rng.nextInt(20, 40));
+        UnitType type = rc.getType();
+        if (type == UnitType.SPLASHER) {
+          mover = new RandomPainter(rc);
+        } else if (type == UnitType.MOPPER) {
+          mover = new Mopper(5);
         }
 
         while (true) {
@@ -95,11 +76,23 @@ public class RobotPlayer {
 
             // Try/catch blocks stop unhandled exceptions, which cause your robot to explode.
             try {
-                // The same run() function is called for every robot on your team, even if they are
-                // different types.
-                if (mover != null) {
-                  mover.moveAndExplore(rc);
+
+              if (Tower.isPaintTower(type)) {
+                // Only a paint tower, and with enough resources, will be able to run this
+                if (rc.canBuildRobot(UnitType.MOPPER, nextLoc)) {
+                  rc.buildRobot(UnitType.MOPPER, nextLoc);
                 }
+              } else if (Tower.isMoneyTower(type)) {
+                // we are a money tower
+                if (rc.canBuildRobot(UnitType.SPLASHER, nextLoc)) {
+                  rc.buildRobot(UnitType.SPLASHER, nextLoc);
+                }
+              }
+              // The same run() function is called for every robot on your team, even if they are
+              // different types.
+              if (mover != null) {
+                mover.moveAndExplore(rc);
+              }
             } catch (GameActionException e) {
                 // Oh no! It looks like we did something illegal in the Battlecode world. You should
                 // handle GameActionExceptions judiciously, in case unexpected events occur in the game

@@ -30,7 +30,7 @@ public class Mopper extends AbstractMover {
             d = RobotPlayer.directions[currentDirection];
         }
 
-        // If we are in approaching mode
+        // If we are in APPROACHING mode
         if (enemyPaintTarget != null) {
             // If we can move to the target, do so
             // otherwise, randomly choose another direction
@@ -41,15 +41,18 @@ public class Mopper extends AbstractMover {
                 d = here.directionTo(enemyPaintTarget);
                 rc.move(d);
                 this.moveCount += 1;
+                    System.out.println("Approaching target " + here.toString());
 
                 // If we're at the target, unpaint it and unset our target
-                if (here.equals(enemyPaintTarget)) {
+                if (here.isWithinDistanceSquared(enemyPaintTarget, 2)) {
                     rc.attack(enemyPaintTarget);
+                    System.out.println("Attacking target");
                     enemyPaintTarget = null;
                 }
             }
 
         } else {
+            // SEARCHING MODE
             // we don't have a target yet, move
             while (rc.canMove(d)) {
                 rc.move(d);
@@ -68,11 +71,14 @@ public class Mopper extends AbstractMover {
         // If it's time for us to refresh our view of the environment,
         // and we don't have a goal already
         if ((this.moveCount % this.senseInterval) == 0 && (enemyPaintTarget == null)) {
-            MapInfo[] tiles = rc.senseNearbyMapInfos();
+            // only find enemy paint within 5 of us
+            MapInfo[] tiles = rc.senseNearbyMapInfos(5);
             for (MapInfo tile : tiles) {
+                System.out.println("Sensed " + tile.getMapLocation().toString());
                 if ((tile.getPaint() == PaintType.ENEMY_PRIMARY) ||
                     (tile.getPaint() == PaintType.ENEMY_SECONDARY)) {
                         enemyPaintTarget = tile.getMapLocation();
+                        System.out.println("Target acquired " + enemyPaintTarget.toString());
                         break;
                 }
             }
