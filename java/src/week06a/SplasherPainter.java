@@ -1,4 +1,4 @@
-package teacher05b;
+package week06a;
 
 import java.util.Arrays;
 import java.util.HashSet;

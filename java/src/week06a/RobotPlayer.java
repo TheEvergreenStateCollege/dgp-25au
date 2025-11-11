@@ -1,4 +1,4 @@
-package teacher05b;
+package week06a;
 
 import battlecode.common.*;
 
@@ -48,10 +48,10 @@ public class RobotPlayer {
     public static void run(RobotController rc) throws GameActionException {
         // Hello world! Standard output is very useful for debugging.
         // Everything you say here will be directly viewable in your terminal when you run a match!
-        System.out.println("Teacher 05a");
+        System.out.println("Week 06a");
 
         // You can also use indicators to save debug notes in replays.
-        rc.setIndicatorString("Hello from Teacher 02b");
+        rc.setIndicatorString("Hello from Week 06a");
 
         // Create exactly one robot on startup, at robot controller's location 
         // in a random direction
@@ -60,30 +60,14 @@ public class RobotPlayer {
 
         AbstractMover mover = null;
 
-        if (Tower.isPaintTower(rc.getType())) {
-          // Only a paint tower, and with enough resources, will be able to run this
-          if (rc.canBuildRobot(UnitType.MOPPER, nextLoc)) {
-            rc.buildRobot(UnitType.MOPPER, nextLoc);
-          }
-        } else {
-          // we are a money tower
-          if (rc.canBuildRobot(UnitType.SPLASHER, nextLoc)) {
-            rc.buildRobot(UnitType.SPLASHER, nextLoc);
-          }
-        }
+        
 
         if (rc.getType() == UnitType.SPLASHER) {
+          mover = new RandomPainter(rc);
 
-          if (rc.getID() % 2 == 0) {
-            // If splasher ID is even, do random movements
-            mover = new RandomPainter(rc);
-          } else {
-            // If splasher ID is off, do spiral movements
-            mover = new SpiralPainter(rc);
-          }
-
-        } else {
-          mover = new Mopper(rng.nextInt(20, 40));
+        } else if (rc.getType() == UnitType.MOPPER) {
+          // If the robot controller's type is a Mopper, 
+          mover = new Mopper(10);
         }
 
         while (true) {
@@ -99,6 +83,18 @@ public class RobotPlayer {
                 // different types.
                 if (mover != null) {
                   mover.moveAndExplore(rc);
+                } else {
+                  if (Tower.isPaintTower(rc.getType())) {
+                    // Only a paint tower, and with enough resources, will be able to run this
+                    if (rc.canBuildRobot(UnitType.MOPPER, nextLoc)) {
+                      rc.buildRobot(UnitType.MOPPER, nextLoc);
+                    }
+                  } else {
+                    // we are a money tower
+                    if (rc.canBuildRobot(UnitType.SPLASHER, nextLoc)) {
+                      rc.buildRobot(UnitType.SPLASHER, nextLoc);
+                    }
+                  }
                 }
             } catch (GameActionException e) {
                 // Oh no! It looks like we did something illegal in the Battlecode world. You should
