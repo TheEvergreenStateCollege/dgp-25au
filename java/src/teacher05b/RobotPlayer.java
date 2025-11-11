@@ -60,15 +60,16 @@ public class RobotPlayer {
 
         AbstractMover mover = null;
 
-        // Only a tower, and with enough resources, will be able to run this
-        if (rc.canBuildRobot(UnitType.MOPPER, nextLoc)) {
-          rc.buildRobot(UnitType.MOPPER, nextLoc);
+        if (rc.getID() % 2 == 0) {
+            // Only a tower, and with enough resources, will be able to run this
+            if (rc.canBuildRobot(UnitType.MOPPER, nextLoc)) {
+                rc.buildRobot(UnitType.MOPPER, nextLoc);
+            }
+        } else {
+            if (rc.canBuildRobot(UnitType.SPLASHER, nextLoc)) {
+                rc.buildRobot(UnitType.SPLASHER, nextLoc);
+            }
         }
-
-        if (rc.canBuildRobot(UnitType.SPLASHER, nextLoc)) {
-          rc.buildRobot(UnitType.SPLASHER, nextLoc);
-        }
-
         if (rc.getType() == UnitType.SPLASHER) {
 
           if (rc.getID() % 2 == 0) {
