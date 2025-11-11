@@ -6,11 +6,6 @@
 * Review, a winning strategy is in sight
   * `teacher05b` vs. `refplayer`
 
-* Questions
-  * Question 1. What kind of loop is try{} and catch{}?
-  * Question 2. Can the directional array be even more delineated (more directions added) without breaking the game?
-  * Question 3. How would you add more piece types?
-
 * Dividing up strategy
   * between multiple kinds of units
   * between "pilot" and "gunner" of the same kind of unit
@@ -32,16 +27,6 @@ https://www.youtube.com/watch?v=LvuChgh4fGg
   * spawning a new splasher
   * detecting painted squares and moving in a random direction until we find fresh squares
 
-## Introduction Activity
-
-Returning to our introduction activity, you can choose a new game or reuse your previously chosen game.
-
-We will divide up the strategy you gave for your chosen game in three different ways:
-* Are there different units in your chosen game?
-  * Can you divide up a master strategy so that each kind of unit gets a different sub-strategy to help the overall team win?
-* Is there a unit which must move within the game universe to a given location, and then take action there?
-  * can you re-state your previous strategy in terms of a sub-strategy for a "pilot" and a sub-strategy for a "gunner"
-
 ## Review Issues and Commits
 
 * `WrenW01` [refplayer soldier strategy](https://github.com/TheEvergreenStateCollege/dgp-25au/issues/9)
@@ -51,3 +36,12 @@ We will divide up the strategy you gave for your chosen game in three different 
 ## Break
 
 ## Second Half
+
+We come up with mob programming goals and create a GitHub issue for it based on our previous discussion.
+
+* A main goal, which is meant to be hard enough to take 25 minutes, exercise some new skills, or explore a less familiar direction.
+* A stretch goal, which is meant to be simpler and explore a more familiar development direction.
+
+Mob programming in breakout room for 25 minutes.
+
+Return 5 minutes before the end of class to regroup and discuss what happened.
