@@ -26,7 +26,7 @@ public class Mopper extends AbstractMover {
         Direction d = RobotPlayer.directions[currentDirection];
 
         while (!rc.canMove(d)) {
-            currentDirection = (currentDirection + 1) % RobotPlayer.directions.length;
+            currentDirection = (int) (Math.random() * 8);
             d = RobotPlayer.directions[currentDirection];
         }
 
@@ -41,9 +41,10 @@ public class Mopper extends AbstractMover {
                 d = here.directionTo(enemyPaintTarget);
                 rc.move(d);
                 this.moveCount += 1;
+                System.out.println("Distance from target: " + here.distanceSquaredTo(enemyPaintTarget));
 
                 // If we're at the target, unpaint it and unset our target
-                if (here.isWithinDistanceSquared()) {
+                if (here.isWithinDistanceSquared(enemyPaintTarget, 2)) {
                     rc.attack(enemyPaintTarget);
                     enemyPaintTarget = null;
                 }

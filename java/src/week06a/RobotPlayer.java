@@ -17,6 +17,7 @@ public class RobotPlayer {
      */
     static int turnCount = 0;
 
+    static int robotParity = 0;
     /**
      * A random number generator.
      * We will use this RNG to make some random moves. The Random class is provided by the java.util.Random
@@ -67,7 +68,7 @@ public class RobotPlayer {
 
         } else if (rc.getType() == UnitType.MOPPER) {
           // If the robot controller's type is a Mopper, 
-          mover = new Mopper(10);
+          mover = new Mopper(1);
         }
 
         while (true) {
@@ -86,14 +87,14 @@ public class RobotPlayer {
                 } else {
                   if (Tower.isPaintTower(rc.getType())) {
                     // Only a paint tower, and with enough resources, will be able to run this
-                    if (rc.canBuildRobot(UnitType.MOPPER, nextLoc)) {
+                    if (rc.canBuildRobot(UnitType.MOPPER, nextLoc) && robotParity == 0) {
                       rc.buildRobot(UnitType.MOPPER, nextLoc);
                     }
+                    if (rc.canBuildRobot(UnitType.SPLASHER, nextLoc)  && robotParity == 1) {
+                          rc.buildRobot(UnitType.SPLASHER, nextLoc);
+                    } robotParity = (robotParity + 1) % 2;
                   } else {
                     // we are a money tower
-                    if (rc.canBuildRobot(UnitType.SPLASHER, nextLoc)) {
-                      rc.buildRobot(UnitType.SPLASHER, nextLoc);
-                    }
                   }
                 }
             } catch (GameActionException e) {
