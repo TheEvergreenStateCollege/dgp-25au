@@ -1,13 +1,9 @@
 # Week 07b
 2025-11-12 Wednesday
 
-WORK-IN-PROGRESS not complete yet.
-
 ## First Half
 
 * Review 
-
-* Go over homework 06 and 07.
 
 ### Questions
 
@@ -18,9 +14,16 @@ WORK-IN-PROGRESS not complete yet.
 
 ### Radio Communication
 
-From towers
-
-To towers
+* So far, robots can only coordinate through
+  * what's baked into their code (constants, random strategies)
+  * what they can sense from the map (wall locations, markers, paint) 
+* Must be on paint
+* Are sent in a particular *round*, and last for 5 rounds after that.
+* To and from towers only
+* 4 bytes
+  * `| type |   y |   x |   sender |`
+  * `|   8  |   8 |   8 |   8      |`
+  * `| <<24 | <<16| <<8 |          |`
 
 ### Introduction Activity
 
@@ -34,7 +37,7 @@ We will divide up the strategy you gave for your chosen game in three different 
 
 ### New Strategy
 
-[Our current strategy]() is successful on some maps at defeating the reference player.
+[Our current strategy](https://github.com/TheEvergreenStateCollege/dgp-25au/issues/13) is successful on some maps at defeating the reference player.
 
 Let's come up with a new strategy that uses radio communication and marking to augment our original strategy.
 
@@ -44,4 +47,8 @@ That is, we will have a new master strategy.
 
 ## Second Half
 
+Divide up our new strategy into parts that we can work on, and test, independently.
+
 Mob programming in a breakout room.
+
+* Review Homework 06 and 07.
