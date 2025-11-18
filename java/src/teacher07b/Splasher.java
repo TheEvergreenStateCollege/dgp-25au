@@ -117,7 +117,9 @@ public class Splasher extends AbstractRobot {
               d = RobotPlayer.directions[RobotPlayer.rng.nextInt(RobotPlayer.directions.length)];
             }
             rc.move(d);
-        } while (here.isWithinDistanceSquared(destination, 2));
+            this.paint(rc);
+
+        } while (!here.isWithinDistanceSquared(destination, 2));
         // Cycle through directions until we find one where we are not blocked
     }
 
