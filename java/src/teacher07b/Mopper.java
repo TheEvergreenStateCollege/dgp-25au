@@ -10,7 +10,7 @@ public class Mopper extends AbstractRobot {
     int senseInterval; // wait this number of turns before sensing and moving to unpaint
     MapLocation enemyPaintTarget; // null before we've found a target, 
     int moveCount; // number of times we are moving
-
+    
     public Mopper(int senseInterval) {
         currentDirection = 0;
         this.senseInterval = senseInterval;
@@ -26,7 +26,14 @@ public class Mopper extends AbstractRobot {
         Direction d = RobotPlayer.directions[currentDirection];
 
         while (!rc.canMove(d)) {
-            currentDirection = (currentDirection + 1) % RobotPlayer.directions.length;
+            if (rc.getID() % 2 == 0) {
+                currentDirection = (currentDirection + 1) % RobotPlayer.directions.length;
+            } else {
+                currentDirection -= 1;
+                if (currentDirection < 0) {
+                    currentDirection = RobotPlayer.directions.length - 1;
+                }
+            }
             d = RobotPlayer.directions[currentDirection];
         }
 
@@ -48,6 +55,7 @@ public class Mopper extends AbstractRobot {
                     rc.attack(enemyPaintTarget);
                     System.out.println("Attacking target");
                     enemyPaintTarget = null;
+                    break;
                 }
             }
 

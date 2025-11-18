@@ -71,6 +71,7 @@ public class Tower extends AbstractRobot {
     int mapHeight;
     UnitType type;
     MapLocation here;
+    final int SPAWN_INTERVAL = 2;
 
     public Tower(RobotController rc) {
         this.mapWidth = rc.getMapWidth();
@@ -88,15 +89,17 @@ public class Tower extends AbstractRobot {
         Direction dir = RobotPlayer.getRandomDirection();
         MapLocation nextLoc = rc.getLocation().add(dir);
 
-        if (Tower.isPaintTower(type)) {
-            // Only a paint tower, and with enough resources, will be able to run this
-            if (rc.canBuildRobot(UnitType.MOPPER, nextLoc)) {
-                rc.buildRobot(UnitType.MOPPER, nextLoc);
-            }
-        } else if (Tower.isMoneyTower(type)) {
-            // we are a money tower
-            if (rc.canBuildRobot(UnitType.SPLASHER, nextLoc)) {
-                rc.buildRobot(UnitType.SPLASHER, nextLoc);
+        if (RobotPlayer.turnCount % SPAWN_INTERVAL == 0) {
+            if (Tower.isPaintTower(type)) {
+                // Only a paint tower, and with enough resources, will be able to run this
+                if (rc.canBuildRobot(UnitType.MOPPER, nextLoc)) {
+                    rc.buildRobot(UnitType.MOPPER, nextLoc);
+                }
+            } else if (Tower.isMoneyTower(type)) {
+                // we are a money tower
+                if (rc.canBuildRobot(UnitType.SPLASHER, nextLoc)) {
+                    rc.buildRobot(UnitType.SPLASHER, nextLoc);
+                }
             }
         }
 
