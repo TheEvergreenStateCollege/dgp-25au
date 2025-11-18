@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import battlecode.common.Direction;
 import battlecode.common.GameActionException;
 import battlecode.common.GameActionExceptionType;
 import battlecode.common.MapInfo;
@@ -49,11 +50,11 @@ public class Splasher extends AbstractRobot {
 
         // Tell our tower we need a mission
         MapLocation here = rc.getLocation();
-        RadioMessage msgToTower = new RadioMessage(Tower.FROM_SPLASHER, here.x, here.y, (byte)(rc.getID() & 0xFF));
+        RadioMessage msgToTower = new RadioMessage(Tower.FROM_SPLASHER, here.x, here.y, rc.getID());
         System.out.println("can send message " + rc.canSendMessage(this.homeTower, msgToTower.toInt()));
 
         if ((this.homeTower != null) && (rc.canSendMessage(this.homeTower))) {
-            System.out.println("Sending message to home tower " + msgToTower.toString());
+            System.out.println("Sending message to home tower " + msgToTower.toInt());
             rc.sendMessage(this.homeTower, msgToTower.toInt());
         }
 
@@ -64,7 +65,7 @@ public class Splasher extends AbstractRobot {
             RadioMessage msgFromTower = RadioMessage.fromInt(receivedMessage);
 
             // If the message is meant for us
-            if (msgFromTower.sender == (rc.getID() & 0xFF)) {
+            if ((byte)msgFromTower.getSender() == (byte)(rc.getID() & 0xFF)) {
                 this.destination = new MapLocation(msgFromTower.x, msgFromTower.y);
                 System.out.println("Destination " + this.destination.toString() + " for " + msgFromTower.sender);
                 break;
@@ -104,31 +105,20 @@ public class Splasher extends AbstractRobot {
             return;
         }
 
-        // Cycle through directions until we find one where we are not blocked
-        while (!rc.canMove(RobotPlayer.directions[currentDirection])) {
-            // switch to a new random direction
-            currentDirection = RobotPlayer.rng.nextInt(RobotPlayer.directions.length);
-        }
+        MapLocation here;
 
-        // Get our current location
-        MapLocation here = rc.getLocation();
-
-        // move in that direction
-        rc.move(RobotPlayer.directions[currentDirection]);
-
-        // Only paint if we are more than 3 tiles away from the last time we painted
-        if (lastPainted.distanceSquaredTo(here) > 4) {
-
-            this.paint(rc);
-
-            MapInfo[] infos = rc.senseNearbyMapInfos();
-            for (MapInfo info : infos) {
-                if (info.hasRuin() && !ruins.contains(info.getMapLocation())) {
-                    ruins.add(info.getMapLocation());
-                }
+        // if we can't move toward our destination, choose a random direction to get us unstuck first
+        // otherwise, move toward our destination until we are within sqrt(2) of it.
+        do {
+            here = rc.getLocation();
+            Direction d = here.directionTo(destination);
+            while (!rc.canMove(d)) {
+              // switch to a new random direction
+              d = RobotPlayer.directions[RobotPlayer.rng.nextInt(RobotPlayer.directions.length)];
             }
-        }
-
+            rc.move(d);
+        } while (here.isWithinDistanceSquared(destination, 2));
+        // Cycle through directions until we find one where we are not blocked
     }
 
     public void paint(RobotController rc) throws GameActionException {

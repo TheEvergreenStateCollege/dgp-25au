@@ -14,8 +14,24 @@ public class RadioMessage {
         this.sender = (byte)(sender & 0xFF);
     }
 
+    public int getShiftedType() {
+        return (this.type << 24) & 0xFF000000;
+    }
+
+    public int getShiftedY() {
+        return (this.y << 16) & 0x00FF0000;
+    }
+
+    public int getShiftedX() {
+        return (this.x << 8) & 0x0000FF00;
+    }
+
+    public int getSender() {
+        return this.sender & 0x000000FF;
+    }
+
     public int toInt() {
-        return (this.type << 24) | (this.y << 16) | (this.x << 8) | (this.sender);
+        return getShiftedType() | getShiftedX() | getShiftedY() | getSender();
     }
 
     public static RadioMessage fromInt(int message) {

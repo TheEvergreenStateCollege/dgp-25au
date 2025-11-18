@@ -112,12 +112,15 @@ public class Tower extends AbstractRobot {
             // needing a mission
 
             RadioMessage msgFromSplasher = RadioMessage.fromInt(msg.getBytes());
+            System.out.println("Received from splasher " + msg.getBytes());
             MapLocation senderLoc = new MapLocation(msgFromSplasher.x, msgFromSplasher.y);
+            System.out.println("Parsed from splasher " + msgFromSplasher.toString());
             if (msgFromSplasher.type == Tower.FROM_TOWER) {
                 System.out.println("Tower Sender" + msgFromSplasher.sender);
             } else {
+                // Message is from a splasher
                 RadioMessage msgToSplasher = new RadioMessage(Tower.FROM_TOWER, this.currentX, this.currentY, msg.getSenderID());
-                System.out.println("Splasher Sender" + msgFromSplasher.sender + " with msg " + msgToSplasher.toString());
+                System.out.println("Splasher Sender" + msgFromSplasher.sender + " at location " + senderLoc.toString() + " with msg " + msgToSplasher.toString());
                 rc.sendMessage(senderLoc, msgToSplasher.toInt());
             }
             
