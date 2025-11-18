@@ -1,0 +1,57 @@
+package week08a;
+
+import battlecode.common.*;
+
+import java.util.HashSet;
+import java.util.Set;
+
+// An abstract class that moves a splasher around
+// in different exploration patterns
+public abstract class SplasherPainter extends AbstractMover {
+    
+    MapLocation lastPainted;
+
+    int currentDirection;
+
+    // We don't want duplicate ruin locations
+    Set<MapLocation> ruins;
+    Set<MapLocation> walls;
+
+    MapLocation homeTower; // the tower that spawned us
+
+    public SplasherPainter(RobotController rc) throws GameActionException {
+        this.lastPainted = rc.getLocation();
+        this.currentDirection = 0;
+        this.ruins = new HashSet<>();
+        this.homeTower = senseTower(rc);
+    }
+
+    // Sense nearby robots and if any of them are a type of tower
+    // return the MapLocation of the first one (which should be the tower that spawned us)
+    public static MapLocation senseTower(RobotController rc) throws GameActionException {
+      
+      // Sense nearby ally robots and print if any of them are towers
+      RobotInfo[] allyRobots = rc.senseNearbyRobots(-1, rc.getTeam());
+
+      MapLocation here = rc.getLocation();
+      for (RobotInfo ally : allyRobots) {
+        MapLocation allyLoc = ally.getLocation();
+        try {
+            if (Tower.isTower(ally.type)) {
+                String message = String.format("Paint tower found at %d,%d", ally.location.x, ally.location.y);
+                System.out.println(message);
+                // this ally is a paint tower
+                return ally.getLocation();
+            }
+        } catch (Exception e) {
+            System.err.println(e.toString());
+            e.printStackTrace();
+        }
+      }
+
+      throw new GameActionException(GameActionExceptionType.NO_ROBOT_THERE, "No home tower found.");
+    }
+
+    public abstract void moveAndExplore(RobotController rc) throws GameActionException;
+
+}
