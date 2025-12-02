@@ -27,8 +27,7 @@ classDiagram
     SimpleStartup : -int[] locations
     SimpleStartup : -int numOfHits
     SimpleStartup : +void setLocations()
-    SimpleStartup : +String checkYourself()
-    SimpleStartup : -int guess()
+    SimpleStartup : +String checkYourself(int)
     class SimpleStartup{
     }
     class SimpleStartupGame{
