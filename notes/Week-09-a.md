@@ -28,6 +28,7 @@ classDiagram
     SimpleStartup : -int numOfHits
     SimpleStartup : +void setLocations()
     SimpleStartup : +String checkYourself()
+    SimpleStartup : -int guess()
     class SimpleStartup{
     }
     class SimpleStartupGame{
