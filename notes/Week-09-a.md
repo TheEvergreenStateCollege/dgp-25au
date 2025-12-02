@@ -24,9 +24,9 @@ classDiagram
     note "Which classes refer to or instantiate others?"
     %% SimpleStartup <-- SimpleStartupGame
     %% SimpleStartup <-- SimpleStartupTestDrive
-    %% SimpleStartup : -int[] locations
-    %% SimpleStartup : -int numOfHits
-    %% SimpleStartup : +void setLocations()
+    SimpleStartup : -int[] locations
+    SimpleStartup : -int numOfHits
+    SimpleStartup : +void setLocations()
     %% SimpleStartup : +String checkYourself()
     class SimpleStartup{
     }
