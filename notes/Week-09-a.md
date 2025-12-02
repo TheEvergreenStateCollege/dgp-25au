@@ -22,8 +22,8 @@ title: Simple Startup Game Class Diagram
 ---
 classDiagram
     note "Which classes refer to or instantiate others?"
-    %% SimpleStartup <-- SimpleStartupGame
-    %% SimpleStartup <-- SimpleStartupTestDrive
+    SimpleStartup <-- SimpleStartupGame
+    SimpleStartup <-- SimpleStartupTestDrive
     SimpleStartup : -int[] locations
     SimpleStartup : -int numOfHits
     SimpleStartup : +void setLocations()
