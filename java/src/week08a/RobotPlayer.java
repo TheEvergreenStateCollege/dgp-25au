@@ -17,7 +17,6 @@ public class RobotPlayer {
      */
     static int turnCount = 0;
 
-    static int robotParity = 0;
     /**
      * A random number generator.
      * We will use this RNG to make some random moves. The Random class is provided by the java.util.Random
@@ -39,7 +38,7 @@ public class RobotPlayer {
     };
 
     public static Direction getRandomDirection() {
-        return directions[rng.nextInt(directions.length)];
+      return directions[rng.nextInt(directions.length)];
     }
 
     /**
@@ -53,26 +52,19 @@ public class RobotPlayer {
     public static void run(RobotController rc) throws GameActionException {
         // Hello world! Standard output is very useful for debugging.
         // Everything you say here will be directly viewable in your terminal when you run a match!
-        System.out.println("Week 06a");
+        System.out.println("Teacher 05a");
 
         // You can also use indicators to save debug notes in replays.
-        rc.setIndicatorString("Hello from Week 06a");
+        rc.setIndicatorString("Hello from Teacher 02b");
 
-        // Create exactly one robot on startup, at robot controller's location 
-        // in a random direction
-        Direction dir = directions[rng.nextInt(directions.length)];
-        MapLocation nextLoc = rc.getLocation().add(dir);
+        AbstractRobot bot = null;
 
-        AbstractMover mover = null;
-
-        
-
-        if (rc.getType() == UnitType.SPLASHER) {
-          mover = new RandomPainter(rc);
-
-        } else if (rc.getType() == UnitType.MOPPER) {
-          // If the robot controller's type is a Mopper, 
-          mover = new Mopper(1);
+        UnitType type = rc.getType();
+        switch(type) {
+          case UnitType.SPLASHER: bot = new Splasher(rc); break;
+          case UnitType.MOPPER : bot = new Mopper(1); break;
+          case UnitType.SOLDIER: break; // no soldier yet
+          default: bot = new Tower(rc);
         }
 
         while (true) {
@@ -84,23 +76,12 @@ public class RobotPlayer {
 
             // Try/catch blocks stop unhandled exceptions, which cause your robot to explode.
             try {
-                // The same run() function is called for every robot on your team, even if they are
-                // different types.
-                if (mover != null) {
-                  mover.moveAndExplore(rc);
-                } else {
-                  if (Tower.isPaintTower(rc.getType())) {
-                    // Only a paint tower, and with enough resources, will be able to run this
-                    if (rc.canBuildRobot(UnitType.MOPPER, nextLoc) && robotParity == 0) {
-                      rc.buildRobot(UnitType.MOPPER, nextLoc);
-                    }
-                    if (rc.canBuildRobot(UnitType.SPLASHER, nextLoc)  && robotParity == 1) {
-                          rc.buildRobot(UnitType.SPLASHER, nextLoc);
-                    } robotParity = (robotParity + 1) % 2;
-                  } else {
-                    // we are a money tower
-                  }
-                }
+
+              // The same run() function is called for every robot on your team, even if they are
+              // different types.
+              if (bot != null) {
+                bot.takeAction(rc);
+              }
             } catch (GameActionException e) {
                 // Oh no! It looks like we did something illegal in the Battlecode world. You should
                 // handle GameActionExceptions judiciously, in case unexpected events occur in the game
