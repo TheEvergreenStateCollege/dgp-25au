@@ -46,7 +46,7 @@ public class GameHelper {
                 startupCoords[i] = location;
                 location += increment;
             }
-            // System.out.println("Trying: " + Arrays.toString())
+            System.out.println("Trying: " + Arrays.toString(startupCoords));
 
             if (startupFits(startupCoords, increment)) {
                 success = coordsAvailable(startupCoords);
@@ -55,7 +55,7 @@ public class GameHelper {
 
         savePositionToGrid(startupCoords);
         ArrayList<String> alphaCells = convertCoordsToAlphaFormat(startupCoords);
-        // System.out.println("Placed at: " + alphaCells)
+        System.out.println("Placed at: " + alphaCells);
 
         return alphaCells;
     }
@@ -98,7 +98,7 @@ public class GameHelper {
     private String getAlphaCoordsFromIndex(int index) {
         int row = calcRowFromIndex(index);
         int col = index % GRID_LENGTH;
-        return ALPHABET.indexOf(row) + Integer.valueOf(col).toString();
+        return ALPHABET.substring(col, col+1) + Integer.valueOf(col).toString();
     }
 
     private int calcRowFromIndex(int index) {
