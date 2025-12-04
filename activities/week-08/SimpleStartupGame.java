@@ -17,21 +17,19 @@ public class SimpleStartupGame {
         int counter = 0;
         Scanner scanner = new
         Scanner(System.in);
-        String result;
+        String result = "";
+        int guess = -1;
 
         do {
             System.out.print("Submit a guess: ");
-            int guess;
-            if (!result){
-                guess = 0;
-            } else if (result == hit) {
+            if (result == "hit" && guess > 0) {
                 --guess;
             } else {
                 guess = (int) (Math.random() * 7);
             }
             //int guess = scanner.nextInt();
             result = dot.checkYourself(guess);
-            System.out.println("result: " + result);
+            System.out.println("guess: " + guess + ", result: " + result);
         } while (!result.equals("kill!"));
 
 
