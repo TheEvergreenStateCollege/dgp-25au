@@ -11,23 +11,21 @@ public class SimpleStartupGame {
   //Print out the counter interger along with an explanation of the purpose
     public static void main (String[] args) {
         SimpleStartup dot =new SimpleStartup();
-
         int random = (int) (Math.random() * 5);
-
-        int[] intArray = { random, random + 1, random + 2 };
-
-        dot.setLocationCells(intArray);
+        int[] locations = { random, random + 1, random + 2 };
+        dot.setLocationCells(locations);
         int counter = 0;
         Scanner scanner = new
         Scanner(System.in);
 
-        String result = null;
+
         do {
             System.out.print("Submit a guess: ");
             int guess = scanner.nextInt();
-            result = dot.checkYourself(guess);
-            System.out.println(result);
-        } while (!result.equals("kill!"));
+            String result = dot.checkYourself(guess);
+        } while (result.equals("kill!"));
+
+
 
     }
 }
