@@ -98,7 +98,7 @@ public class GameHelper {
     private String getAlphaCoordsFromIndex(int index) {
         int row = calcRowFromIndex(index);
         int col = index % GRID_LENGTH;
-        return ALPHABET.substring(col, col+1) + Integer.valueOf(col).toString();
+        return ALPHABET.substring(row, row+1) + Integer.valueOf(col).toString();
     }
 
     private int calcRowFromIndex(int index) {
