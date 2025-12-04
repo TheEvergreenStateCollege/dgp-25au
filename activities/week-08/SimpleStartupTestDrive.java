@@ -1,16 +1,30 @@
 public class SimpleStartupTestDrive {
     public static void main(String[] args) {
-        SimpleStartup ss = new SimpleStartup();
 
-        int[] locations = new int[3];
+        SimpleStartup dot =new SimpleStartup();
 
-        locations[0] = 3;
-        locations[1] = 4;
-        locations[2] = 5;
+        int[] intArray = {1, 2, 3};
+        dot.setLocationCells(intArray);
+        int[] guesses = new int[4];
+        guesses[0] = 3;
+        guesses[1] = 4;
+        guesses[2] = 1;
+        guesses[3] = 2;
+    
+        String[] results = new String[4];
+        for (int i = 0; i < guesses.length; i++) {
+            results[i] = dot.checkYourself(guesses[i]);
+        }
 
-        ss.setLocationCells(locations);
-
-        String result1 = ss.checkYourself(2);
-        assert(result1.equals("miss"));
+        for (int i = 0; i < results.length; i++) {
+            if (results[i] == "hit") {
+                System.out.println("it's working");
+            } else if (results[i] == "kill!") {
+                System.out.println("it's KILLING");
+            } else {
+                System.out.println("it's not working");
+            }
+        }
     }
+
 }

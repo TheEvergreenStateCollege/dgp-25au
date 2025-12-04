@@ -1,24 +1,23 @@
 public class SimpleStartup {
-    
-    int[] locations;
-    int numOfHits = 3;
 
-    public SimpleStartup() {
-        this.numOfHits = 0;
-    }
+    int[] locationCells;
+    int numOfHits;
 
-    public void setLocationCells(int[] locations) {
-        this.locations = locations;
-    }
-
-    public String checkYourself(int cell) {
-        if ((cell >= this.locations[0]) && (cell <= this.locations[2])) {
-            numOfHits++;
-            if (numOfHits == 3) {
-                return "kill";
+    String checkYourself(int guess) {
+        for (int i = 0; i < locationCells.length; i++) {
+            if (guess == locationCells[i]) {
+                numOfHits += 1;
+                if (numOfHits == locationCells.length) {
+                    return("kill!");
+                }
+                return("hit");
             }
-            return "hit";
         }
-        return "miss";
+        return("miss");
+    }
+
+    void setLocationCells(int[] loc) {
+        locationCells = loc;
+        numOfHits = 0;
     }
 }
