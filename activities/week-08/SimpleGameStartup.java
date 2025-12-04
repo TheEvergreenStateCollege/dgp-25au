@@ -7,7 +7,7 @@ public class SimpleGameStartup {
 
         SimpleStartup theStartup = new SimpleStartup();
 
-        int randomNum = (int) (Math.random() * 5);
+        int random = (int) (Math.random() * 5);
 
         int[] locations = { random, random + 1, random + 2 };
 
