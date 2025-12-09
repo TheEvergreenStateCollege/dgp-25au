@@ -1,6 +1,6 @@
 public class CoordCalculator {
     
-    public String getWest(String coord) throws EdgeOfTheWorldException {
+    public static String getWest(String coord) throws EdgeOfTheWorldException {
         String row = coord.substring(0,1); // first character
         int col = Integer.parseInt(coord.substring(1, 2)); // second character
         int newCol = col-1;
@@ -11,7 +11,7 @@ public class CoordCalculator {
         return newCoord;
     }
 
-    public String getEast(String coord) throws EdgeOfTheWorldException {
+    public static String getEast(String coord) throws EdgeOfTheWorldException {
         String row = coord.substring(0,1); // first character
         int col = Integer.parseInt(coord.substring(1, 2)); // second character
         int newCol = col+1;
@@ -22,7 +22,7 @@ public class CoordCalculator {
         return newCoord;
     }
 
-    public String getNorth(String coord) throws EdgeOfTheWorldException {
+    public static String getNorth(String coord) throws EdgeOfTheWorldException {
         String row = coord.substring(0,1); // first character
         String col = coord.substring(1, 2); // second character
         int rowIndex = GameHelper.ALPHABET.indexOf(row);
@@ -36,7 +36,7 @@ public class CoordCalculator {
     }
 
 
-    public String getSouth(String coord) throws EdgeOfTheWorldException {
+    public static String getSouth(String coord) throws EdgeOfTheWorldException {
         String row = coord.substring(0,1); // first character
         String col = coord.substring(1, 2); // second character
         int rowIndex = GameHelper.ALPHABET.indexOf(row);

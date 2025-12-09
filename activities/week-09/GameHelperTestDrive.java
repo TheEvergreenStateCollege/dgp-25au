@@ -35,7 +35,7 @@ public class GameHelperTestDrive {
 
         String move;
         do {
-            move = Strategy.getUserInput();
+            move = strategy.getUserInput("miss");
             System.out.println(move);
         } while(!move.isEmpty());
 

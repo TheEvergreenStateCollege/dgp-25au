@@ -30,16 +30,31 @@ public class StartupBust {
     }
 
     private void startPlaying() {
-        Strategy strategy = new Strategy();
         while (!startups.isEmpty()) {
-            //String userGuess = helper.getUserInput("Enter a guess");
-            String userGuess = strategy.getUserInput();
+            String userGuess = helper.getUserInput("Enter a guess");
             checkUserGuess(userGuess);
         }
         finishGame();
     }
 
-    private void checkUserGuess(String userGuess) {
+    private void startStrategyPlaying() {
+        Strategy strategy = new Strategy();
+        String userGuess = "";
+        String result = "";
+        do {
+            userGuess = strategy.getUserInput(result);
+            System.out.println("Guessing " + userGuess);
+            result = checkUserGuess(userGuess);
+        } while (!startups.isEmpty() && !userGuess.isEmpty());
+
+        if (!startups.isEmpty()) {
+            System.out.println("Your strategy failed to sink all the startups. Try again!");
+        } else {
+            finishGame();
+        }
+    }
+
+    private String checkUserGuess(String userGuess) {
         numOfGuesses++;
         String result = "miss";
 
@@ -54,6 +69,7 @@ public class StartupBust {
                 break;
             }
         }
+        return result;
     }
 
     private void finishGame() {
@@ -70,6 +86,6 @@ public class StartupBust {
     public static void main(String[] args) {
         StartupBust game = new StartupBust();
         game.setUpGame();
-        game.startPlaying();
+        game.startStrategyPlaying();
     }
 }
