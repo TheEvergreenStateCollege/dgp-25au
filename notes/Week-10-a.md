@@ -13,6 +13,8 @@
   * Iterate in the left direction until you stop getting hits
   * Iterate in the right direction until you stop getting hits
 
+<img width="709" height="477" alt="image" src="https://github.com/user-attachments/assets/d1d9ed50-b1d2-49b4-b14c-8cbdd16742b1" />
+
 ## Break
 
 ## Second Half
