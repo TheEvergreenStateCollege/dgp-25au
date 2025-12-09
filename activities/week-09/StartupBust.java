@@ -30,8 +30,10 @@ public class StartupBust {
     }
 
     private void startPlaying() {
+        Strategy strategy = new Strategy();
         while (!startups.isEmpty()) {
-            String userGuess = helper.getUserInput("Enter a guess");
+            //String userGuess = helper.getUserInput("Enter a guess");
+            String userGuess = strategy.getUserInput();
             checkUserGuess(userGuess);
         }
         finishGame();

@@ -3,9 +3,10 @@ import java.util.Scanner;
 import java.util.*;
 
 public class GameHelper {
-    private static final String ALPHABET = "abcdefg";
-    private static final int GRID_LENGTH = 7;
-    private static final int GRID_SIZE = 49;
+    public static final String ALPHABET = "abcdefg";
+    public static final int GRID_LENGTH = 7;
+    public static final int GRID_SIZE = 49;
+    public static final int GRID_HEIGHT = GRID_SIZE / GRID_LENGTH;
     private static final int MAX_ATTEMPTS = 200;
     static final int HORIZONTAL_INCREMENT = 1;
     static final int VERTICAL_INCREMENT = GRID_LENGTH;
@@ -86,7 +87,7 @@ public class GameHelper {
         }
     }
 
-    private ArrayList<String> convertCoordsToAlphaFormat(int[] startupCoords) {
+    public static ArrayList<String> convertCoordsToAlphaFormat(int[] startupCoords) {
         ArrayList<String> alphaCells = new ArrayList<>();
         for (int index : startupCoords) {
             String alphaCoords = getAlphaCoordsFromIndex(index);
@@ -95,13 +96,13 @@ public class GameHelper {
         return alphaCells;
     }
 
-    private String getAlphaCoordsFromIndex(int index) {
+    private static String getAlphaCoordsFromIndex(int index) {
         int row = calcRowFromIndex(index);
         int col = index % GRID_LENGTH;
-        return ALPHABET.substring(col, col+1) + Integer.valueOf(col).toString();
+        return ALPHABET.substring(row, row+1) + Integer.valueOf(col).toString();
     }
 
-    private int calcRowFromIndex(int index) {
+    private static int calcRowFromIndex(int index) {
         return index / GRID_LENGTH;
     }
 
