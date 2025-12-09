@@ -35,8 +35,10 @@ public class Startup {
                 System.out.println("Ouch! You sunk " + name + " :( ");
             } else {
                 result = "hit";
-                System.out.println("You hit " + name);
+                System.out.println("Wow, you hit " + name + "!");
             }
+        } else {
+            System.out.println("Oh no, you missed!");
         }
         //return hit or miss or kill
         return result;
