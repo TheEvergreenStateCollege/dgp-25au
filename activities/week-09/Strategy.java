@@ -140,6 +140,18 @@ public class Strategy {
         }
     }
 
+    private void goThirdNorthWrapError() {
+        try {
+            // we miss on West (the first time), continue to South
+            move = CoordCalculator.getNorth(lastMove);
+            mode = Modes.THIRD_NORTH;
+        } catch (EdgeOfTheWorldException eotwe) {
+            // We can't go north anymore, but also didn't get a hit to the south.
+            // This shouldn't happen! Oh well, go back to first stage
+            goFirst();
+        }
+    }
+
     private void goSecondSouthWrapSecondEast() {
         try {
             move = CoordCalculator.getSouth(lastMove);
