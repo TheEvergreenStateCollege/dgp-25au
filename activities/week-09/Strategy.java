@@ -250,6 +250,8 @@ public class Strategy {
                 } else if (lastResult.equals("hit")) {
                     goFirst();
                 } else {
+                    goEast();
+                    goEast();
                     goSecondEastWrapError();
                 }
                 break;
@@ -267,6 +269,15 @@ public class Strategy {
                     // backtrack to the first stage hit
                     goNorth();
                     goSecondEastWrapSecondNorth();
+                }
+                break;
+            case THIRD_SOUTH:
+                if (lastResult.equals("kill")) {
+                    goFirst();
+                } else {
+                    goNorth();
+                    goNorth();
+                    goSecondNorthWrapError();
                 }
                 break;
             case SECOND_EAST:
