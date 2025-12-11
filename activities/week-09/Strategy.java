@@ -256,7 +256,12 @@ public class Strategy {
                 }
                 break;
             case SECOND_NORTH:
-                // TODO: Fill in your second stage strategy for exploring north of hitting a startup for the first time
+                if (lastResult.equals("kill")) {
+                    goFirst();
+                } else if (lastResult.equals("hit")) {
+                    // continue south for third stage
+                    goThirdNorthWrapError();
+                }
                 break;
             case SECOND_SOUTH:
                 if (lastResult.equals("kill")) {
