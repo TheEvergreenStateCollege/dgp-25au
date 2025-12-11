@@ -12,7 +12,7 @@ public class Startup {
     //A setter method that updates the startup's location (random location provided by GameHelper placeStartup() method)
     public void setLocationCells(ArrayList<String> loc) {
         locationCells = loc;
-        System.out.println(loc.toString());
+        //System.out.println(loc.toString());
     }
 
     //Your basic setter method
