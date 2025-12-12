@@ -18,13 +18,13 @@ public class SimpleStartupGame {
         while (!result.equals("kill!")) {
             System.out.print("Submit a guess: ");
 
-            guess = Scanner.nextInt();
+            guess = scanner.nextInt();
 
             result = dot.checkYourself(guess);
 
             counter++;
 
-            System.out.println("Your guess was: " + guess ", and the result was " + result + "!");
+            System.out.println("Your guess was: " + guess + ", and the result was a " + result + "!");
         }
 
         System.out.println("You sunk the startup in " + counter + " guesses!");
