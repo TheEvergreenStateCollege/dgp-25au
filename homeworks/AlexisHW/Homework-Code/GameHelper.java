@@ -44,8 +44,9 @@ public class GameHelper {
 
         savePositionToGrid(startupCoords);
         ArrayList<String> alphaCells = convertCoordsToAlphaFormat(startupCoords);
-        System.out.println("Placed at: "+ alphaCells);
+        System.out.println("Placed at: " + alphaCells);
         return alphaCells;
+    }
 
     boolean startupFits(int[] startupCoords, int increment) {
         int finalLocation = startupCoords[startupCoords.length - 1];
