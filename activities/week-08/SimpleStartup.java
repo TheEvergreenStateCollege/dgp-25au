@@ -59,4 +59,11 @@ public class SimpleStartup {
             if (result.equals("kill!")) return;
         }
     }
+    public static void main(String[] args) {
+        SimpleStartup game = new SimpleStartup();
+        game.setLocationCells(new int[]{3, 4, 5});
+
+
+        game.runWinningStrategy();
+    }
 }
