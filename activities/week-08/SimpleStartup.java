@@ -63,7 +63,6 @@ public class SimpleStartup {
         SimpleStartup game = new SimpleStartup();
         game.setLocationCells(new int[]{3, 4, 5});
 
-
-        game.runWinningStrategy();
+        game.thisIsHowIWin();
     }
 }
